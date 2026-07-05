@@ -1,6 +1,18 @@
 import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
+# INFORMATION
+st.sidebar.title("👨‍💻 Developer")
+
+st.sidebar.markdown("""
+### Connect with me
+
+🐙 **GitHub**  
+https://github.com/viveksrivastava045-cyber
+
+💼 **LinkedIn**  
+www.linkedin.com/in/vivek-srivastava-0a878a329
+""")
 
 # Page Configuration
 st.set_page_config(
