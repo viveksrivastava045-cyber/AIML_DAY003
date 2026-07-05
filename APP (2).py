@@ -14,11 +14,11 @@ df = pd.read_csv("insurance_data.csv")
 
 # Features and target
 X = df[["age"]]
-y = df["bought_insurance"]
+Y = df["bought_insurance"]
 
 # Train model
 model = LogisticRegression()
-model.fit(X, y)
+model.fit(X, Y)
 
 # User input
 age = st.number_input(
