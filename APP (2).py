@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 # INFORMATION
-st.sidebar.title("👨‍💻 Developer")
+st.sidebar.title("👨‍💻 Developer : Vivek kumar Srivastava")
 
 st.sidebar.markdown("""
 ### Connect with me
