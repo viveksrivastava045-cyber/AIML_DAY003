@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 
-# Page title
-st.set_page_config(page_title="Life Insurance Predictor")
+# Page Configuration
+st.set_page_config(
+    page_title="Life Insurance Predictor"
+    page_icon="🏠",
+    layout="centered"
+)
 
 st.title("🏥 Life Insurance Prediction App")
 
@@ -11,6 +15,9 @@ st.write("Predict whether a person is likely to buy life insurance based on age.
 
 # Load dataset
 df = pd.read_csv("insurance_data.csv")
+st.subheader("Dataset")
+st.dataframe(df)
+
 
 # Features and target
 X = df[["age"]]
@@ -25,7 +32,8 @@ age = st.number_input(
     "Enter Age",
     min_value=1,
     max_value=100,
-    value=25
+    value=20,
+    step=1 
 )
 
 # Prediction
@@ -37,12 +45,17 @@ if st.button("Predict"):
     st.subheader("Prediction")
 
     if prediction == 1:
-        st.success("✅ The person is likely to buy life insurance.")
+        st.success("✅ YES.")
     else:
-        st.error("❌ The person is NOT likely to buy life insurance.")
+        st.error("❌ NO")
 
     st.write(f"Probability of Buying Insurance: **{probability*100:.2f}%**")
 
-# Show dataset
-if st.checkbox("Show Dataset"):
-    st.dataframe(df)
+
+# -----------------------------------
+# Model Information
+# -----------------------------------
+st.subheader("Model Details")
+
+st.write("Coefficient:", model.coef_[0])
+st.write("Intercept:", model.intercept_)
