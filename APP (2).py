@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 
 # Page Configuration
 st.set_page_config(
-    page_title="Life Insurance Predictor"
+    page_title="Life Insurance Predictor",
     page_icon="🏠",
     layout="centered"
 )
